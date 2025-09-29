@@ -31,7 +31,7 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 1rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 1);
   position: fixed;
   top: -1px;
 }
