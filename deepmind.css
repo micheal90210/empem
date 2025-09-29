@@ -31,7 +31,7 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 1rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 1);
   position: fixed;
   top: -1px;
 }
@@ -537,7 +537,7 @@ body {
   justify-content: space-between;
   margin-top: 2rem;
   position: relative;
-  top: 0.4rem;
+  bottom: 1.5rem;
 }
 
 .try-ins p {
@@ -545,13 +545,15 @@ body {
   height: auto;
   font-size: 0.8rem;
   font-weight: 600;
+  position: relative;
+  bottom: 2.3rem;
 }
 
 .mores {
   width: fit-content;
   height: auto;
   position: relative;
-  top: 11rem;
+  top: 9.23rem;
 }
 
 .mores p {
@@ -944,5 +946,239 @@ body {
   /* End state: Zoom back out */
   100% {
     background-size: 100% 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Adjust content width from 70% to 90% */
+  .creating-main-container,
+  .starting-bulding,
+  .googlehome {
+    width: 90%;
+  }
+
+  .menu-container {
+    gap: 2rem;
+  }
+
+  .menu-tags {
+    gap: 1rem;
+  }
+
+  /* Main Image Stacking */
+  .two-images {
+    flex-direction: column; /* Stack images vertically */
+    width: 100%;
+  }
+
+  .bekky,
+  .bekkytwo {
+    width: 100%; /* Make stacked images full width */
+    height: 30rem; /* Reduce height */
+    border-radius: 1.5rem;
+  }
+
+  .bekky button,
+  .bekkytwo button {
+    top: 250px; /* Adjust button position */
+    left: 30px;
+  }
+
+  /* Ensure corners are correct when stacked */
+  .bekky {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1.5rem;
+  }
+  .bekkytwo {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1.5rem;
+  }
+
+  /* Footer Models Section */
+  .gemini-gemma-etc-container {
+    column-gap: 2rem;
+  }
+
+  .all-models-container {
+    margin-left: 0;
+    column-gap: 2rem;
+  }
+}
+
+/* --- Mobile Device (Max Width 768px) --- */
+@media (max-width: 768px) {
+  /* General Layout Overrides */
+  body {
+    padding: 0;
+  }
+
+  .creating-main-container,
+  .starting-bulding,
+  .googlehome {
+    width: 95%; /* Use almost full width */
+    margin-top: 6rem;
+    column-gap: 1rem;
+    padding: 0 10px; /* Add horizontal padding */
+  }
+
+  /* HEADER / NAVIGATION */
+  .hearder-container {
+    padding: 1rem;
+    flex-direction: column; /* Allow header content to wrap/stack */
+    align-items: flex-start;
+  }
+
+  .menu-container {
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Show toggle icon and hide desktop menu/button */
+  .menu-tags,
+  .gemini {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Menu Active State (Toggled by JS) */
+  .menu-container.active .menu-tags,
+  .menu-container.active .gemini {
+    display: flex;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid hsl(0, 0%, 15%);
+    z-index: 999;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .menu-tags a {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid hsl(0, 0%, 10%);
+  }
+  .menu-tags a:first-child {
+    border-top: none;
+  }
+
+  .gemini button {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  /* MAIN CONTENT LAYOUT */
+  .creating-main-container {
+    flex-direction: column; /* Stack left (sticky) and right sections */
+    row-gap: 3rem;
+  }
+
+  .creat-and {
+    position: static; /* Remove sticky on mobile */
+    top: auto;
+    width: 100%;
+  }
+
+  .flash h1 {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+
+  /* Right section elements */
+  .genie {
+    flex-direction: column;
+    row-gap: 1.5rem;
+    column-gap: 0;
+    align-items: flex-start; /* Align left */
+  }
+
+  .imagesframe {
+    width: 100%;
+    height: 12rem;
+  }
+
+  /* FOOTER/BUILD SECTION */
+  .start-container {
+    flex-direction: column;
+    row-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .start-container h1 {
+    font-size: 2rem;
+  }
+
+  .gemini-gemma-etc-container {
+    flex-direction: column; /* Stack the two main model columns */
+    row-gap: 3rem;
+    column-gap: 0;
+  }
+
+  .gemini-our-container,
+  .gemini-our-containers {
+    height: auto;
+    padding-bottom: 2rem;
+  }
+
+  /* Reposition 'more' links to be directly below content on mobile */
+  .more,
+  .mores,
+  .moress {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  /* RESEARCH SECTION */
+  .all-research-content-container {
+    flex-direction: column;
+    row-gap: 3rem;
+    column-gap: 0;
+  }
+
+  .framework1 {
+    flex-direction: column;
+    row-gap: 1.5rem;
+    column-gap: 0;
+  }
+
+  .discovering h1 {
+    width: 100%;
+  }
+
+  .socialmedia {
+    width: 100%;
+  }
+
+  .follow-follow {
+    padding: 2rem 0;
+    margin-top: 0;
+    gap: 0.5rem;
+  }
+
+  .follow-follow p {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .build-ai-container {
+    flex-direction: column;
+    row-gap: 2rem;
+    column-gap: 0;
+  }
+
+  .all-models-container {
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-left: 0;
   }
 }
